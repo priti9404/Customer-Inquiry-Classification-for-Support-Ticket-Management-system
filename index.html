@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Inquiry Classification System</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Welcome to the Customer Inquiry Classification System!</h1>
+
+    {% if message %}
+        <div class="message">{{ message }}</div>
+    {% endif %}
+
+    <!-- File Upload for Training -->
+    <h2>Upload CSV for Model Training</h2>
+    <form action="/" method="POST" enctype="multipart/form-data">
+        <label for="filename">Select CSV File:</label>
+        <input type="file" name="filename" required><br><br>
+        
+        <label for="x_column">Enter the column name for input (X):</label>
+        <input type="text" name="x_column" required><br><br>
+        
+        <label for="y_column">Enter the column name for target (y):</label>
+        <input type="text" name="y_column" required><br><br>
+        
+        <button type="submit">Upload and Train</button>
+    </form>
+
+    <!-- Display Training Results -->
+    {% if accuracy %}
+        <h2>Training Results</h2>
+        <p><strong>Accuracy:</strong> {{ accuracy }}</p>
+        <pre><strong>Classification Report:</strong><br>{{ class_report }}</pre>
+        
+        <h3>Logistic Regression Coefficients:</h3>
+        <ul>
+            {% for coef_value in coef[0] %}
+                <li>{{ coef_value }}</li>
+            {% endfor %}
+        </ul>
+        
+        <!-- Display Word Cloud Image -->
+        <h3>Word Cloud:</h3>
+        <img src="{{ url_for('static', filename='wordcloud.png') }}" alt="Word Cloud">
+    {% endif %}
+</body>
+</html>

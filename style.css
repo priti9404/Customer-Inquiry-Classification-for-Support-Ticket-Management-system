@@ -1,0 +1,267 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+    text-align: center;
+    animation: fadeIn 1s ease-in-out; /* Animation to fade in the whole page */
+    background: linear-gradient(135deg, #f06, #f79c42); /* Bright gradient background */
+}
+
+/* Header Styles */
+h1 {
+    color: #ffffff;
+    font-size: 36px;
+    margin-bottom: 20px;
+    animation: slideInLeft 1s ease-out; /* Animation for sliding header */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Text shadow for better readability */
+}
+
+h2 {
+    color: #ffeb3b; /* Yellow header color */
+    font-size: 28px;
+    margin-bottom: 20px;
+    animation: slideInRight 1s ease-out; /* Animation for sliding subheader */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+h3 {
+    color: #032905; /* Bright Green */
+    font-size: 24px;
+    margin-bottom: 10px;
+    animation: bounceIn 1s ease-out; /* Bouncing effect for sub-headings */
+}
+
+/* Form Styling */
+form {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 20px auto;
+    transform: scale(0.9);
+    animation: scaleUp 0.6s ease-in-out forwards; /* Animation for form appearance */
+    border: 2px solid #df8b38; /* Border color to match the gradient background */
+}
+
+label {
+    font-size: 16px;
+    color: #333;
+    display: block;
+    margin-bottom: 8px;
+    opacity: 0;
+    animation: fadeInUp 1s 0.5s forwards; /* Label fade-in animation */
+}
+
+input[type="file"],
+input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+input[type="file"]:hover,
+input[type="text"]:hover {
+    border-color: #ffeb3b; /* Yellow hover effect */
+    box-shadow: 0 0 10px rgba(255, 235, 59, 0.5); /* Yellow shadow on hover */
+}
+
+/* Button Styling */
+button {
+    background-color: #00bcd4; /* Bright cyan button */
+    color: white;
+    border: none;
+    padding: 15px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+    transition: background-color 0.3s ease;
+    transform: scale(1);
+}
+
+button:hover {
+    background-color: #008c9e; /* Darker cyan hover */
+    transform: scale(1.05); /* Slightly enlarges button on hover */
+}
+
+/* Message Box */
+.message {
+    background-color: #ffeb3b;
+    color: #333;
+    padding: 15px;
+    border-radius: 5px;
+    text-align: center;
+    margin-bottom: 20px;
+    animation: bounceIn 1s ease-out;
+}
+
+/* Results Section */
+.results {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 20px auto;
+    color: #333;
+    animation: fadeInUp 1s 0.5s forwards;
+    border-left: 5px solid #f79c42; /* Orange left border for results */
+}
+
+pre {
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    color: #333;
+}
+
+/* Word Cloud Image */
+img {
+    display: block;
+    margin: 20px auto;
+    max-width: 100%;
+    border: 5px solid #ffeb3b; /* Yellow border around word cloud */
+    animation: pulse 2s infinite; /* Animation to pulse the word cloud image */
+}
+
+/* Links */
+a {
+    color: #ff5722; /* Bright Orange Links */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #d32f2f; /* Darker red color on hover */
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 14px;
+    color: #888;
+}
+
+/* Additional Styling */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    padding: 5px 0;
+    font-size: 14px;
+    color: #333;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    form {
+        padding: 15px;
+    }
+
+    button {
+        font-size: 14px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+}
+
+/* Keyframe Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes bounceIn {
+    0% {
+        transform: scale(0);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes scaleUp {
+    from {
+        transform: scale(0.9);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
